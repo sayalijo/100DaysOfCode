@@ -10,6 +10,6 @@ Brushed up basics of Python. Gone through some concepts from a bytes of python b
 ### R1D2
 Played around with some objects in Python like lists, dictionary, sets and tupples.
 
-###R1D3
+### R1D3
 Today I was only able to solve 2 simple  problems of pyspark. It involved implementing sql function, groupby/sorting.
 I also learnt concept of boradcastig in pyspark. 
