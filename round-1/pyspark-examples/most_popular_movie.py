@@ -13,7 +13,7 @@ Data header:    userId movieId rating timestamp
                 22	377	1	878887116
                 244	51	2	880606923
 """
-__author__      = "Sayali Joshi"
+__author__ = "Sayali Joshi"
 
 from pyspark.sql import SparkSession
 from pyspark.sql import functions as func
@@ -29,7 +29,7 @@ schema = StructType([
     StructField("timestamp", LongType(), True)])
 
 # Load movie data into a dataframe
-movieDF = spark.read.option("sep", "\t").schema(schema).csv("u.data")
+movieDF = spark.read.option("sep", "\t").schema(schema).csv("datasets/u.data")
 
 popMovies = movieDF.groupBy("movieId").count().orderBy(func.desc("count"))
 

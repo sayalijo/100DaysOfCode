@@ -21,17 +21,17 @@ Data header:    movieId|movieName|release_date|......
 
 
 """
-__author__= "Sayali Joshi"
+__author__ = "Sayali Joshi"
 
 from pyspark.sql import SparkSession
-from pyspark.sql import  functions as func
+from pyspark.sql import functions as func
 from pyspark.sql.types import StructType, StructField, IntegerType, LongType
-import  codecs
+import codecs
 
 
 def loadMovieNames():
     movieNames = {}
-    with codecs.open("u.item", mode="r", encoding="iso-8859-1", errors="ignore") as f:
+    with codecs.open("datasets/u.item", mode="r", encoding="iso-8859-1", errors="ignore") as f:
         for line in f:
             fields = line.split(sep="|")
             movieNames[int(fields[0])]=fields[1]
@@ -48,7 +48,7 @@ schema = StructType([
     StructField("rating", IntegerType(), True),
     StructField("timestamp", LongType(), True)])
 
-movieDF = spark.read.option("sep", "\t").schema(schema).csv("u.data")
+movieDF = spark.read.option("sep", "\t").schema(schema).csv("datasets/u.data")
 movieCounts = movieDF.groupBy("movieId").count()
 
 
