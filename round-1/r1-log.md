@@ -13,3 +13,6 @@ Played around with some objects in Python like lists, dictionary, sets and tuppl
 ### R1D3 29 Sep
 Today I was only able to solve 2 simple  problems of pyspark. It involved implementing sql function, groupby/sorting.
 I also learnt concept of boradcastig in pyspark. 
+
+### R1D4 30 Sep
+Solved one more problem in pyspark. Tried to understand breadth first search algorithm. But having hard times trying to understand few parts of login. I will give it a try tomorrow.
